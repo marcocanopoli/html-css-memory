@@ -35,26 +35,26 @@ h1 {
     float: left;
     position: relative;
     height: 200px;
-    width: 180px;
-    /* height: calc(33,3%);
+    width: 180px; 
+    /* height: 100%;
     width: calc(25% - 25px); */
     margin: 10px;
-    padding: 10px;
     border-radius: 15px;
     box-shadow: 0 0 8px rgba(0,0,0,0.3);
     background-image: url("../img/pattern.png");
     background-size: contain;
-    background-repeat: repeat-y;
 }
 
 .card:hover,
-.card:nth-of-type(6) {
+#card-6 {
+/* .row:nth-of-type(2) .card:nth-of-type(2) { */
     background-color: white;    
     background-image: none;
 }
 
 .card:hover *,
-.card:nth-of-type(6) * {
+#card-6 * {
+/* .row:nth-of-type(2) .card:nth-of-type(2) * { */
     opacity: 1;
 }
 
@@ -65,12 +65,10 @@ h1 {
     top: 5%;
     left: 0;
     right: 0;    
-    /* bottom: 0; */
     opacity: 0;
 }
 
 .card-name {
-    display: block;
     position: absolute;
     text-align: center;
     left: 0;
@@ -84,13 +82,13 @@ h1 {
     text-overflow: ellipsis;
     opacity: 0;
 }
-.card:hover .card-name {
+
+.card:hover:not(#card-6) .card-name {
     color: #e67919;
 }
 
 /* footer */
 footer {
     text-align: center;
-    color: black;
     font-size: 21px;
 }
