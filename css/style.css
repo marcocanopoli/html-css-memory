@@ -1,8 +1,85 @@
 /* debug */
+body{
+    background-color: aquamarine;
+}
+
+
+.card {
+    background-color: brown;
+}
 
 /* common */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+
+ .clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+ }
 
 /* body */
 body {
     font-family: 'Nerko One', cursive;
+}
+
+/* header */
+h1 {
+    text-align: center;
+    color: white;
+    font-size: 64px;
+    text-transform: uppercase;
+}
+
+/* main */
+.container {
+    width: 700px;
+    margin:auto
+    /* text-align: center; */
+}
+
+.card-back {
+    float: left;    
+    display: inline-block;
+    position: relative;
+    height: 210px;
+    width: 180px;
+    /* height: calc(33,3%);
+    width: calc(25% - 25px); */
+    margin: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    background-image: url("../img/pattern.png");
+    background-color: darksalmon;
+    background-size: contain;
+    background-repeat: repeat-y;
+}
+
+.container > div:hover {
+    background-color: white;    
+    background-image: none;
+}
+
+.container > div:hover img {
+    opacity: 1;
+}
+
+.card-front {
+    position: absolute;
+    height: 70%;
+    margin: auto;
+    top: 10%;
+    left: 0;
+    right: 0;    
+    /* bottom: 0; */
+    opacity: 0;
+}
+
+
+/* footer */
+footer {
+    text-align: center;
+    color: black;
 }
