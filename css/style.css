@@ -7,10 +7,11 @@
 
  body {
     font-family: 'Nerko One', cursive;
+    text-align: center;
     background-color: #ADD8E6;
 }
 
- .clearfix::after {
+ .row::after {
     content: "";
     display: table;
     clear: both;
@@ -20,75 +21,72 @@
 h1 {
     color: white;
     font-size: 64px;
-    text-align: center;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 /* main */
 .container {
-    width: 800px;
+    width: 55%;
     margin: 30px auto;
 }
 
-.card {
-    float: left;
-    position: relative;
-    height: 200px;
-    width: 180px; 
-    /* height: 100%;
-    width: calc(25% - 25px); */
-    margin: 10px;
-    border-radius: 15px;
-    box-shadow: 0 0 8px rgba(0,0,0,0.3);
-    background-image: url("../img/pattern.png");
-    background-size: contain;
+.cards {
+    margin: 20px 0;
 }
 
-.card:hover,
-#card-6 {
-/* .row:nth-of-type(2) .card:nth-of-type(2) { */
+.card-element {
+    /* position: relative; */
+    float: left;
+    width: calc(25% - 30px);
+    margin: 15px;
+    padding: 20px;
+    /* padding: 20px 20px 40px; */
+    border-radius: 15px;
+    background-image: url("../img/pattern.png");
+    background-size: contain;
+    background-repeat: repeat;    
+    box-shadow: 0 0 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+       
+.card-element img {
+    width: 100%;    
+    visibility: hidden;
+}
+
+.card-element h3 {
+    /* position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0; 
+    line-height: 2; */
+    color: #E61986;
+    line-height: 1;
+    font-size: 30px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    visibility: hidden;
+}
+
+.card-element:hover,
+.card-element.active {
     background-color: white;    
     background-image: none;
 }
 
-.card:hover *,
-#card-6 * {
-/* .row:nth-of-type(2) .card:nth-of-type(2) * { */
-    opacity: 1;
+.card-element:hover *,
+.card-element.active * {
+    visibility: visible;
 }
 
-.card-front img {
-    position: absolute;
-    height: 150px;
-    margin: auto;
-    top: 5%;
-    left: 0;
-    right: 0;    
-    opacity: 0;
-}
-
-.card-name {
-    position: absolute;
-    text-align: center;
-    left: 0;
-    right: 0;  
-    bottom: 2%;
-    font-size: 30px;
-    color: #E61986;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    opacity: 0;
-}
-
-.card:hover:not(#card-6) .card-name {
+.card-element:hover h3 {
     color: #e67919;
 }
 
 /* footer */
-footer {
-    text-align: center;
+footer {                             
     font-size: 21px;
 }
